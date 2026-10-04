@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Pilote JDBC MySQL -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- URL de la base de données h1 -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/h1?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- Dialecte SQL MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Affichage et formatage des requêtes SQL dans la console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Mode de génération DDL (update = met à jour le schéma sans détruire les données) -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Classes d'entités JPA -->
+        <mapping class="org.example.entities.Categorie"/>
+        <mapping class="org.example.entities.Produit"/>
+        <mapping class="org.example.entities.User"/>
+        <mapping class="org.example.entities.Client"/>
+        <mapping class="org.example.entities.Employe"/>
+        <mapping class="org.example.entities.Service"/>
+        <mapping class="org.example.entities.Commande"/>
+        <mapping class="org.example.entities.LigneCommandeProduit"/>
+    </session-factory>
+</hibernate-configuration>
